@@ -1,10 +1,9 @@
 import sys
-from collections import defaultdict
 
 filename = "words.txt"
 lines = open(filename,'r')
 
-def histogram():
+def histogram(lines):
     word_histogram = {}
     for word in lines:
         words = word.split()
@@ -13,8 +12,7 @@ def histogram():
             word_histogram[w] = word_histogram.get(w,0) + 1
     print(word_histogram)
 
-
-def unique_words(word_histogram):
+def unique_words(histogram):
     
     word_txt = open(filename,'r')
     count = {}
@@ -26,14 +24,25 @@ def unique_words(word_histogram):
     len(count) 
     print(f"number of unique words are {len(count)} ")
 
-def frequency():
-    pass
+def frequency(histogram, word):
+    frequencies = []
+    return histogram[word]
 
 
 if __name__ == "__main__":
 
-    histogram()
-    unique_words(lines)
+    histogram(lines)
+
+    unique_words(histogram)
+
+
+
+
+
+
+
+        
+    
 
 
 
