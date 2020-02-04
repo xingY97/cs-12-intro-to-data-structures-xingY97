@@ -9,6 +9,7 @@ def histogram(lines):
         words = word.split()
         #print(words)
         for w in words:
+            #get method searches for specific key, else it will return 0 as default value
             word_histogram[w] = word_histogram.get(w,0) + 1
     print(word_histogram)
 
@@ -27,6 +28,7 @@ def unique_words(histogram):
 def frequency(histogram, word):
     frequencies = []
     return histogram[word]
+
 
 
 if __name__ == "__main__":
