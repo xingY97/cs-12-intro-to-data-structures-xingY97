@@ -22,4 +22,11 @@ def listogram(lines):
 def tuplegram(lines):
     tuplegram = []
     for word in lines:
-        word 
+        word = word.rstrip()
+        index = get_index(word,tuplegram)
+        if index == -1: #first time we are seeing this word
+            tuplegram.append((word,1))
+        else:#need to update count
+            newcount = tuplegram[index][1] + 1
+            tuplegram[index] = (word,newcount)
+    return tuplegram
