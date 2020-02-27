@@ -24,9 +24,9 @@ def unique_words(histogram):
     print(f"number of unique words are {len(count)} ")
 
 
-def frequency(word，histogram):
-    frequencies = []
-    return histogram[word]
+# def frequency(word，histogram):
+#     frequencies = []
+#     return histogram[word]
 
 def get_index(word,listogram):
     current_index = 0
