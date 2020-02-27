@@ -109,15 +109,37 @@ class LinkedList(object):
                 return node.data
             node = node.next
         return None
-        
+
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
         TODO: Best case running time: O(???) Why and under what conditions?
         TODO: Worst case running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes to find one whose data matches given item
-        # TODO: Update previous node to skip around node with matching data
         # TODO: Otherwise raise error to tell user that delete has failed
         # Hint: raise ValueError('Item not found: {}'.format(item))
+        if self.is_empty():
+            raise ValueError ('Item not found: {}'.format(item))
+            return
+        node = self.head
+        if node.data == item: #check if the head has the item
+            self.head = node.next 
+            if node.next == None: #check if the node has next node after it
+                self.tail = None
+            return
+
+        previous = None
+        while node != None:
+            print("node = ", node)
+            if node.data == item:
+                if node.next == None: #check if the node is the tail
+                    self.tail = previous #assign previous node as the new tail
+                previous.next = node.next
+                return
+        # TODO: Update previous node to skip around node with matching data
+            previous = node 
+            node = node.next #
+            print("node = ", node)
+        raise ValueError("item not found: {}".format(item))
 
 
 def test_linked_list():
