@@ -28,14 +28,14 @@ def unique_words(histogram):
 #     frequencies = []
 #     return histogram[word]
 
-def get_index(word,listogram):
-    current_index = 0
-    for item in listogram:
-        if item[0] == word:
-            return current_index
-        else:
-            current_index += 1
-    return -1
+# def get_index(word,listogram):
+#     current_index = 0
+#     for item in listogram:
+#         if item[0] == word:
+#             return current_index
+#         else:
+#             current_index += 1
+#     return -1
 
 
 def listogram(lines):

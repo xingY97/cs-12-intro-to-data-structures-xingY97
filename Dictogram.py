@@ -35,19 +35,19 @@ class Dictogram(dict):
         frequency = self[word]
         return frequency
 
-    def sample(self):
-        """Return a word from this histogram, randomly sampled by weighting
-        each word's probability of being chosen by its observed frequency."""
-        # TODO: Randomly choose a word based on its frequency in this histogram
-        sum_of_values = sum(self.values())
-        randum_num = randint(0,sum_of_values - 1)
-        for w in self.items():
-            if randum_num == 0:
-                return = w[0]
-            if random_num > 0:
-                random_num -= w[1]
-            if random_num <= 0:
-                return = w[0]
+    # def sample(self):
+    #     """Return a word from this histogram, randomly sampled by weighting
+    #     each word's probability of being chosen by its observed frequency."""
+    #     # TODO: Randomly choose a word based on its frequency in this histogram
+    #     sum_of_values = sum(self.values())
+    #     randum_num = randint(0,sum_of_values - 1)
+    #     for w in self.items():
+    #         if randum_num == 0:
+    #             return = w[0]
+    #         if random_num > 0:
+    #             random_num -= w[1]
+    #         if random_num <= 0:
+    #             return = w[0]
 
 
 
