@@ -41,7 +41,7 @@ class MarkovChain:
         
         print("FIRST WORD IS", first_word)
         sentence += first_word + " "
-        index = 0
+        index = 1
         while index < num_words: 
             current_word = first_word
             for word, histogram in self.markov_chain.items(): 
