@@ -21,7 +21,7 @@ def generate_words():
     #return word
 
     sentence = ""
-    num_words = 5
+    num_words = 7
     # for i in range(num_words):
     #     word = weighted_sample(my_histogram)
     #     sentence += " " + word

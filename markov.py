@@ -1,4 +1,5 @@
 from dictogram import Dictogram
+from random import choice
 
 class MarkovChain:
 
@@ -29,10 +30,14 @@ class MarkovChain:
 
         return markov_chain
 
+    def get_random_word(self): #choose a random for from markov chain's keys, which are unique
+        random_word = choice(list(self.markov_chain.keys())) #must convert these dic.keys() to list
+        return random_word
+
     def walk(self, num_words):
         #TODO: generate a sentence num_words long using the markov chain
         sentence = ""
-        first_word = "fish" #fish for testing
+        first_word = self.get_random_word() 
         
         print("FIRST WORD IS", first_word)
         sentence += first_word + " "
