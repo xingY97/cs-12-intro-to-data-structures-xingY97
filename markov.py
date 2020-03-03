@@ -40,10 +40,9 @@ class MarkovChain:
         while index < num_words: 
             current_word = first_word
             for word, histogram in self.markov_chain.items(): 
-                # print("EYOOOO", word, histogram.dictionary_histogram)
                 if current_word == word: #look for our current word in our markov chain
                     current_word_dictogram = histogram
-                    print("From word =", word, "DICTOGRAM I AM SAMPLING IS", current_word_dictogram)
+                    print("From word =", word, "DICTOGRAm I AM SAMPLING IS", current_word_dictogram)
                     random_weighted_word = histogram.sample() #get the random_weighted_word
                     print("Sample returned is", random_weighted_word)
                     current_word = random_weighted_word #assign random_word as the current_word
@@ -56,6 +55,7 @@ class MarkovChain:
                     continue
             index += 1
         print("SENTENCE =", sentence)
+        return sentence
         
 
     def print_chain(self):

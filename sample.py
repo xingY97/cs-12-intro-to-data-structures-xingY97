@@ -1,6 +1,6 @@
 
 from random import randint
-from histogram import histogram
+from histogram import Histogram
 
 def weighted_sample(histogram):
 
