@@ -1,14 +1,13 @@
 #!python
 
-from linkedlist import LinkedList
-
+from linkedlist import LinkedList, Node
 
 class HashTable(object):
 
     def __init__(self, init_size=8):
         """Initialize this hash table with the given initial size."""
         # Create a new list (used as fixed-size array) of empty linked lists
-        self.buckets = [LinkedList() for _ in range(init_size)]
+        self.buckets = [LinkedList() for _ in range(init_size)] #create empty linked lists
 
     def __str__(self):
         """Return a formatted string representation of this hash table."""
@@ -62,7 +61,7 @@ class HashTable(object):
         items_count = 0
         for bucket in self.buckets:
             for item in bucket.items():
-                items_count += 1
+                items_count +=1
         return items_count
 
     def contains(self, key):
@@ -97,12 +96,12 @@ class HashTable(object):
         # TODO: Check if key-value entry exists in bucket
         # TODO: If found, update value associated with given key
         # TODO: Otherwise, insert given key-value entry into bucket
-        bucket_ll = self.buckets[hash(key) % len(self.buckets)] #use the key to get the bucket index with the hash function. then get the linked list inside the bucket
-        item = bucket_ll.find(lambda item: item[0] == key) #get the item from the bucket, if it exist
+        bucket_ll = self.buckets[hash(key) % len(self.buckets)] 
+        item = bucket_ll.find(lambda item: item[0] == key) 
         data = (key,value)
-        if item != None: #if item exist, update the bucket with our new data
+        if item != None: 
             bucket_ll.update_list(data)
-        else: #if linked list find returns None, append the data
+        else: 
             bucket_ll.append(data)
 
     def delete(self, key):
@@ -118,7 +117,7 @@ class HashTable(object):
         if item is not None:
             bucket.delete(item)
         else:
-            raise keyError(f'key not found: {key}')
+            raise KeyError(f'Key not found: {key}')
 
 
 def test_hash_table():
@@ -126,7 +125,7 @@ def test_hash_table():
     print('hash table: {}'.format(ht))
 
     print('\nTesting set:')
-    for key, value in [('I', 1), ('V', 5), ('X', 10)]:
+    for key, value in [('I', 1), ('V', 5), ('X', 10)]: #("I",1) is a data of the node
         print('set({!r}, {!r})'.format(key, value))
         ht.set(key, value)
         print('hash table: {}'.format(ht))
@@ -153,4 +152,11 @@ def test_hash_table():
 
 
 if __name__ == '__main__':
-    test_hash_table()
+    # test_hash_table()
+    ht = HashTable()
+    ht.set('I', 1)
+    ht.set('V', 4)
+    ht.set('X', 9)
+    ht.set('V', 5)  # Update value
+    ht.set('X', 10)  # Update value
+    print(ht)

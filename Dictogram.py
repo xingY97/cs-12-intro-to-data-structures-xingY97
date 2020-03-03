@@ -1,6 +1,6 @@
 
 from __future__ import division, print_function  # Python 2 and 3 compatibility
-import random
+from random import randint
 
 
 class Dictogram(dict):
@@ -35,19 +35,19 @@ class Dictogram(dict):
         frequency = self[word]
         return frequency
 
-    # def sample(self):
-    #     """Return a word from this histogram, randomly sampled by weighting
-    #     each word's probability of being chosen by its observed frequency."""
-    #     # TODO: Randomly choose a word based on its frequency in this histogram
-    #     sum_of_values = sum(self.values()) #word_counts.values() returns a list of word_count's values. sum() will sum a the values in a list and returns an int
-    #     random_num = randint(0, sum_of_values - 1) #get a random num from 0-sum_of_values -1 
-    #     for w in self.items(): #decrement random_num by the word's count until random_num is less than 0
-    #         if random_num == 0: #if random_num is 0 then return the first word in the list
-    #             return = w[0]
-    #         if random_num > 0: #if rand_num is greater than 0, then decrement it
-    #             random_num -= w[1]
-    #         if random_num <= 0: #if random_num is less than 0, then we return the word
-    #             return = w[0]
+    def sample(self):
+        """Return a word from this histogram, randomly sampled by weighting
+        each word's probability of being chosen by its observed frequency."""
+        # TODO: Randomly choose a word based on its frequency in this histogram
+        sum_of_values = sum(self.values()) #word_counts.values() returns a list of word_count's values. sum() will sum a the values in a list and returns an int
+        random_num = randint(0, sum_of_values - 1) #get a random num from 0-sum_of_values -1 
+        for w in self.items(): #decrement random_num by the word's count until random_num is less than 0
+            if random_num == 0: #if random_num is 0 then return the first word in the list
+                return w[0]
+            if random_num > 0: #if rand_num is greater than 0, then decrement it
+                random_num -= w[1]
+            if random_num <= 0: #if random_num is less than 0, then we return the word
+                return w[0]
 
 
 
