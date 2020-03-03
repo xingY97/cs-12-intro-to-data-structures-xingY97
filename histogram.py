@@ -67,9 +67,9 @@ def word_contains(word, histogram):
 
 if __name__ == '__main__':
     
-    filename = "words.txt"
-    my_histogram = open(filename,'r')
-    #my_histogram = Histogram("one fish two fish red fish ") #initialize a histogram from a string
+    # filename = "words.txt"
+    # my_histogram = open(filename,'r')
+    my_histogram = Histogram("one fish two fish red fish ") #initialize a histogram from a string
     print(f"Histogram = {my_histogram}")
     print(f"Unique words count = {my_histogram.unique_words_count}")
     print(f"Words count = {my_histogram.words_count}")
