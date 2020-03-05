@@ -100,7 +100,9 @@ class HashTable(object):
         item = bucket_ll.find(lambda item: item[0] == key) 
         data = (key,value)
         if item != None: 
-            bucket_ll.update_list(data)
+            bucket_ll.delete(item)
+            bucket_ll.append(data)
+
         else: 
             bucket_ll.append(data)
 
